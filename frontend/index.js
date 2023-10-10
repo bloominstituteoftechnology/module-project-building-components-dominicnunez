@@ -50,7 +50,7 @@ function moduleProject3() {
 
     function handleClick() {
       // change clicked div card and previous div card
-      let activeCard = document.getElementsByClassName('learner-card active')
+      let activeCard = document.getElementsByClassName('learner-card active');
 
       if (activeCard.length) {
         activeCard[0].className = 'learner-card';
@@ -153,8 +153,19 @@ function moduleProject3() {
   // 👉 TASK 4 - Clicking on the section should deactivate the active card
   //  ✨ do your magic here
   document.addEventListener('click', (e) => {
-    const clickedElement = e.target;
-    console.log(clickedElement);
+    let clickedElement = e.target;
+    let parentElement = clickedElement.parentNode;
+    // console.log(clickedElement.classList, parentElement.classList);
+    const checkOne = (!clickedElement.classList.contains('learner-card') || !clickedElement.classList.contains('active'))
+    const checkTwo = (!parentElement.classList.contains('learner-card') || !parentElement.classList.contains('active'))
+  
+    if (checkOne || checkTwo) {
+      let activeCard = document.querySelector('.learner-card.active');
+      console.log(activeCard);
+      if (activeCard != null) {
+        activeCard.className = "learner-card active";
+      }
+    }
   })
 }
 
