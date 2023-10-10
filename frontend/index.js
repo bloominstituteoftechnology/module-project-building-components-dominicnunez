@@ -47,7 +47,21 @@ function moduleProject3() {
     const langName = languages.find(language => language.id === learner.favLanguage).name;
     favLanguage.textContent = "Favorite Language: " + langName;
     div.appendChild(favLanguage);
-    
+
+    function handleClick() {
+      // change clicked div card and previous div card
+      let activeCard = document.getElementsByClassName('learner-card active')
+
+      if (activeCard.length == 1) {
+        activeCard[0].className = 'learner-card';
+        div.className = 'learner-card active';
+      } else {
+        div.className = 'learner-card active';
+      }
+    }
+
+    div.addEventListener('click', handleClick);
+
     return div;
   }
 
