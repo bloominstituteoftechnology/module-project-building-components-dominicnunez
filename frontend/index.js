@@ -151,8 +151,11 @@ function moduleProject3() {
   }))
 
   // 👉 TASK 4 - Clicking on the section should deactivate the active card
-
   //  ✨ do your magic here
+  document.addEventListener('click', (e) => {
+    const clickedElement = e.target;
+    console.log(clickedElement);
+  })
 }
 
 // ❗ DO NOT CHANGE THIS CODE
