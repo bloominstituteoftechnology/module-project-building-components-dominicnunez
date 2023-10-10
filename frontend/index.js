@@ -52,7 +52,7 @@ function moduleProject3() {
       // change clicked div card and previous div card
       let activeCard = document.getElementsByClassName('learner-card active')
 
-      if (activeCard.length == 1) {
+      if (activeCard.length) {
         activeCard[0].className = 'learner-card';
         div.className = 'learner-card active';
       } else {
