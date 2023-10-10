@@ -159,11 +159,11 @@ function moduleProject3() {
     const checkOne = (!clickedElement.classList.contains('learner-card') || !clickedElement.classList.contains('active'))
     const checkTwo = (!parentElement.classList.contains('learner-card') || !parentElement.classList.contains('active'))
   
-    if (checkOne || checkTwo) {
+    if (checkOne && checkTwo) {
       let activeCard = document.querySelector('.learner-card.active');
       console.log(activeCard);
       if (activeCard != null) {
-        activeCard.className = "learner-card active";
+        activeCard.classList.remove('active');
       }
     }
   })
