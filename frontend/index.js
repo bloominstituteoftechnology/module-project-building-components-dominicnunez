@@ -87,10 +87,55 @@ function moduleProject3() {
   }
 
   // 👉 TASK 3 - Write a `buildFooter` component that returns a footer
-
   function buildFooter(footerData) {
     //  ✨ do your magic here
-    return document.createElement('footer')
+    const footer = document.createElement('footer');
+    const companyInfo = document.createElement('div');
+    companyInfo.className = "company-info";
+
+    const companyName = document.createElement('p');
+    companyName.className = "company-name";
+    const companyAddress = document.createElement('p');
+    companyAddress.className = "address";
+    const companyEmail = document.createElement('p');
+    companyEmail.className = "contact-email";
+    const emailAddress = document.createElement('a');
+    emailAddress.href = "mailto:" + footerData.contactEmail;
+    emailAddress.textContent = footerData.contactEmail;
+
+    companyName.textContent = footerData.companyName;
+    companyAddress.textContent = footerData.address;
+    companyEmail.textContent = "Email: ";
+    companyEmail.appendChild(emailAddress);
+
+    companyInfo.appendChild(companyName);
+    companyInfo.appendChild(companyAddress);
+    companyInfo.appendChild(companyEmail);
+    footer.appendChild(companyInfo);
+
+    const socialMedia = document.createElement('div');
+    socialMedia.className = "social-media";
+
+    const twitter = document.createElement('a');
+    const facebook = document.createElement('a');
+    const instagram = document.createElement('a');
+
+    twitter.href = footerData.socialMedia.twitter;
+    twitter.textContent = "Twitter";
+    facebook.href = footerData.socialMedia.facebook;
+    facebook.textContent = "Facebook";
+    instagram.href = footerData.socialMedia.instagram;
+    instagram.textContent = "Instagram";
+    socialMedia.appendChild(twitter);
+    socialMedia.appendChild(facebook);
+    socialMedia.appendChild(instagram);
+    footer.appendChild(socialMedia);
+
+    const div = document.createElement('div');
+    div.textContent = "© " + footerData.companyName.toUpperCase() + " " + new Date().getFullYear();
+    footer.appendChild(div);
+
+    return footer;
   }
 
   // ❗ DOM creation using your `buildFooter` component (do not change):
