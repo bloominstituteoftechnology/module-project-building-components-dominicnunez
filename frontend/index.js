@@ -27,7 +27,28 @@ function moduleProject3() {
   // 👉 TASK 2A - Write a `buildLearnerCard` component that returns a card
 
   function buildLearnerCard(learner, languages) {
-    //  ✨ do your magic here
+    //  ✨ do your magic here  
+    const div = document.createElement('div');
+    div.className = "learner-card";
+    
+    let name = document.createElement('p');
+    name.textContent = learner.fullName;
+    div.appendChild(name);
+
+    let id = document.createElement('p');
+    id.textContent = "Learner ID: " + learner.id;
+    div.appendChild(id);
+
+    let dateOfBirth = document.createElement('p');
+    dateOfBirth.textContent = "Date of Birth: " + learner['dateOfBirth'];
+    div.appendChild(dateOfBirth);
+
+    let favLanguage = document.createElement('p');
+    const langName = languages.find(language => language.id === learner.favLanguage).name;
+    favLanguage.textContent = "Favorite Language: " + langName;
+    div.appendChild(favLanguage);
+    
+    return div;
   }
 
   {
@@ -48,6 +69,7 @@ function moduleProject3() {
       { id: 17, fullName: 'Daniel Castillo', dateOfBirth: '1995-11-05', favLanguage: 12 }
     ]
     //  ✨ do your magic here
+    learners.forEach((learner) => document.querySelector('section').appendChild(buildLearnerCard(learner, languages)));
   }
 
   // 👉 TASK 3 - Write a `buildFooter` component that returns a footer
