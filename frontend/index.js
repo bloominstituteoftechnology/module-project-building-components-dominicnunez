@@ -132,7 +132,7 @@ function moduleProject3() {
     footer.appendChild(socialMedia);
 
     const div = document.createElement('div');
-    div.textContent = "© " + footerData.companyName.toUpperCase() + " " + new Date().getFullYear();
+    div.innerHTML = "&copy; " + footerData.companyName.toUpperCase() + " " + new Date().getFullYear();
     footer.appendChild(div);
 
     return footer;
