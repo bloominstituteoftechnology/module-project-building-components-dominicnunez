@@ -29,7 +29,8 @@ function moduleProject3() {
   function buildLearnerCard(learner, languages) {
     //  ✨ do your magic here  
     const div = document.createElement('div');
-    div.className = "learner-card";
+    // div.className = "learner-card";
+    div.classList.add('learner-card');
     
     let name = document.createElement('p');
     name.textContent = learner.fullName;
@@ -53,11 +54,9 @@ function moduleProject3() {
       let activeCard = document.getElementsByClassName('learner-card active');
 
       if (activeCard.length) {
-        activeCard[0].className = 'learner-card';
-        div.className = 'learner-card active';
-      } else {
-        div.className = 'learner-card active';
+        activeCard[0].classList.remove('active');
       }
+      div.classList.add('active');
     }
 
     div.addEventListener('click', handleClick);
