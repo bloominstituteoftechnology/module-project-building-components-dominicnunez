@@ -5,11 +5,11 @@ function moduleProject3() {
   function buildNav(links) {
     //  ✨ do your magic here
     const nav = document.createElement('nav');
-    links.forEach(() => {
+    links.forEach((link) => {
       let a = document.createElement('a');
-      a.href = links['href'];
-      a.title = links['title'];
-      a.textContent = links['textcontent'];
+      a.href = link['href'];
+      a.title = link['title'];
+      a.textContent = link['textContent'];
       nav.appendChild(a);
     });
     return nav;
